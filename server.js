@@ -39,8 +39,6 @@ const swaggerSpec = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
-
-
 /**
  * @openapi
  * /agents:
