@@ -189,6 +189,7 @@ app.get('/customer', async (req, res) => {
  *                     description: The advance amount paid for the order
  *                   
  */
+
 app.get('/orders', async (req, res) => {
     let conn;
     try {
@@ -199,8 +200,6 @@ app.get('/orders', async (req, res) => {
         if (conn) conn.release();
     }
 });
-
-
 /**
  * @openapi
  * /agents:
