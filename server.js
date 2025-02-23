@@ -148,7 +148,7 @@ app.get('/company', async (req, res) => {
  *                   CUST_CITY:
  *                     type: string
  *                     description: The city of the customer
- *                   etc...
+ *                   
  */
 app.get('/customer', async (req, res) => {
     let conn;
@@ -187,7 +187,7 @@ app.get('/customer', async (req, res) => {
  *                     type: number
  *                     format: float
  *                     description: The advance amount paid for the order
- *                   etc...
+ *                   
  */
 app.get('/orders', async (req, res) => {
     let conn;
