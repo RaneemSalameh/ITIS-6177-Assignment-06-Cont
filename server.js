@@ -3,6 +3,7 @@ const app = express();
 const port = 3000;
 const mariadb = require('mariadb');
 const bodyParser = require('body-parser');
+const saySomething = require('./my-function');
 const { body, validationResult } = require('express-validator');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
@@ -1279,9 +1280,23 @@ app.delete('/orders/:ordNum', async (req, res) => {
 
 
 
+
+app.get('/say', (req, res) => {
+
+    const keyword = req.query.keyword;
+    
+    if (!keyword) {
+      return res.status(400).send("Missing 'keyword' parameter.");
+    }
+  
+    const result = saySomething(keyword);
+    
+    res.send(result);
+  });
+  
+
+  const PORT = process.env.PORT || 3000;
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
-
-
-
