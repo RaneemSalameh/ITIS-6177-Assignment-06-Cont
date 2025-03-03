@@ -1263,7 +1263,35 @@ app.delete('/customer/:code', async (req, res) => {
 });
 
 
-
+/**
+ * @openapi
+ * /orders/{ordNum}:
+ *   delete:
+ *     summary: Deletes an order
+ *     parameters:
+ *       - in: path
+ *         name: ordNum
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The order number of the order to be deleted
+ *     responses:
+ *       200:
+ *         description: Order deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 message:
+ *                   type: string
+ *                 result:
+ *                   type: object
+ *       500:
+ *         description: Server error
+ */
 app.delete('/orders/:ordNum', async (req, res) => {
     let conn;
     try {
